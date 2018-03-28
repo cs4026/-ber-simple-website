@@ -5,6 +5,8 @@ Carlos Santos
 Email:
 carlossantos@outlook.com
 
+Only dependancies involved are those created with React
+
 Available Commands:
 ### `npm start`
 
