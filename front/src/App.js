@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {load,save} from './utils'
 
 class App extends Component {
   constructor(props){
@@ -11,9 +12,9 @@ class App extends Component {
       choice: -1,
       years: -1,
       submited: false,
-      savings: [[900,0],[0,219000]]
+      savings: [[900,0],[0,219000]],
+      genesis: true
     }
-
     this.typeSwtich = this.typeSwtich.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -46,7 +47,29 @@ class App extends Component {
   }
 }
   render() {
-    if(this.state.truth){
+    let g = load()
+    if(!g){
+      save()
+      return(
+        <div>
+        <div class = "intro">
+        <div class="text">
+        <div class="underline"> Welcome to the Calculator! </div><br/>
+        This tool will allow you to calculate how much money and water you saved per year
+        from being a Vegetarian or a Vegan.<br />
+        Click&nbsp;
+        <div class="underline3" onClick={() => {this.setState({genesis: false})}}>here</div>
+        &nbsp;to continue
+      </div>
+      </div>
+      <span class="watermark-horizontal">
+        Created by: Carlos Santos
+    </span>
+      <span class="watermark-vertical">- email: carlossantos@outlook.com</span>
+      </div>
+      )
+    }
+    else if(this.state.truth){
       return (
         <div class = "t">
         <div class="text">
