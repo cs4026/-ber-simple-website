@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+/* textcolor */
+/* underline color */
+/* background color */
+body {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #18ec99;
+  margin: 0;
+}
+
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+   font-size: 0.1em;
+   font-family: "Open Sans", sans-serif;
+}
+
+.text {
+  color: rgba(35, 35, 35, 0.8);
+  font-size: 3em;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+}
+.text2{
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 2em;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+}
+
+.underline {
+
+  background-size: 100%;
+  background-image: linear-gradient(to bottom, rgba(41, 128, 185, 0) 1.15em, #ffffff 1.15em, #ffffff 1.19em, rgba(41, 128, 185, 0) 1.19em);
+  display: inline-block;
+  background-size: 2px 2em;
+  background-repeat: repeat-x;
+  /* Set your wanted text-shadow here */
+
+}
+
+.t{
+  align-items: center;
+}
+
+button{
+  background-color: white;
+  color: #18ec99;
+
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+.underline2 {
+  background-size: 100%;
+  background-color: white;
+  color: #18ec99;
+  display: inline-block;
+  background-size: 2px 2em;
+  background-repeat: repeat-x;
+  /* Set your wanted text-shadow here */
+
+}
+
+:root {
+  background: #f5f6fa;
+  color: #9c9c9c;
+  font: 1rem "PT Sans", sans-serif;
+}
+
+
+.container {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+}
+a:hover {
+  color: #7f8ff4;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+.btn--primary {
+  background: white;
+  color: #18ec99;
+  padding: 12px 36px;
+  margin-top: 1px;
+  margin-right: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn--text{
+  font-family: "Open Sans", sans-serif;
+}
+.btn--primary:hover {
+  background: #18ec99;
+  color: white;
+}
+.form__field {
+  width: 360px;
+  background: #fff;
+  color: #a3a3a3;
+  font: inherit;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+}
