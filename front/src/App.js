@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {load,save} from './utils'
+import numbers from './numbers'
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 class App extends Component {
   constructor(props){
@@ -12,7 +15,7 @@ class App extends Component {
       choice: -1,
       years: -1,
       submited: false,
-      savings: [[900,0],[0,219000]],
+      savings: [[700,533280]],
       genesis: true
     }
     this.typeSwtich = this.typeSwtich.bind(this)
@@ -31,7 +34,8 @@ class App extends Component {
 
   handleKeyPress = (e) => {
     e.preventDefault()
-    this.setState({submited: true})
+    if(!numbers[this.state.years]) alert("Number not formatted correctly");
+    else this.setState({submited: true})
   }
 
   handleChange(input){
@@ -42,8 +46,8 @@ class App extends Component {
   getSavings(years){
     document.body.style.background ="#18ec99"
     return {
-      money: years*this.state.savings[this.state.choice][0],
-      water: years*this.state.savings[this.state.choice][1],
+      money: numbers[years]*this.state.savings[this.state.choice][0],
+      water: numbers[years]*this.state.savings[this.state.choice][1],
   }
 }
   render() {
@@ -56,7 +60,7 @@ class App extends Component {
         <div class="text">
         <div class="underline"> Welcome to the Calculator! </div><br/>
         This tool will allow you to calculate how much money and water you saved per year
-        from being a Vegetarian or a Vegan.<br />
+        from being a Vegetarian <br />
         Click&nbsp;
         <div class="underline3" onClick={() => {this.setState({genesis: false})}}>here</div>
         &nbsp;to continue
@@ -73,10 +77,7 @@ class App extends Component {
       return (
         <div class = "t">
         <div class="text">
-          Please select<br/>
-        <div class="underline" onClick={() => {this.typeSwtich(0)}}> Vegetarian </div>
-        -or-
-        <div class="underline" onClick={() => {this.typeSwtich(1)}}> Vegan </div>
+        <div class="underline" onClick={() => {this.typeSwtich(0)}}> Calculate </div>
       </div>
       </div>
     )
@@ -90,8 +91,9 @@ class App extends Component {
       <div class="container">
         <div class="container__item">
           <form onSubmit={this.handleKeyPress}>
-            <input type="number" class="form__field" onChange={this.handleChange}/>
+            <input type="string" class="form__field" placeHolder="Write number out ex. (sixty-nine)" onChange={this.handleChange}/>
           </form>
+
         </div>
       </div>
     </div>
@@ -102,11 +104,11 @@ class App extends Component {
   let s="You've saved"
   let saving = "$"+savings.money.toLocaleString('en')
   let water = savings.water.toLocaleString('en')+" gallons of water"
-  let y= "over the last " +parseInt(this.state.years).toLocaleString('en')+ " years!"
+  let y= "over the last " +parseInt(numbers[this.state.years]).toLocaleString('en')+ " years!"
 
   return(
     <div>
-    <button class="btn--primary" onClick={() => alert("give me a backend")}><div class="btn--text">Email</div></button>
+    
     <div class = "t">
     <div class="text2">
       {c}
