@@ -15,7 +15,7 @@ class App extends Component {
       choice: -1,
       years: -1,
       submited: false,
-      savings: [[700,533280]],
+      savings: [[750,533280]],
       genesis: true
     }
     this.typeSwtich = this.typeSwtich.bind(this)
@@ -108,7 +108,7 @@ class App extends Component {
 
   return(
     <div>
-    
+
     <div class = "t">
     <div class="text2">
       {c}
